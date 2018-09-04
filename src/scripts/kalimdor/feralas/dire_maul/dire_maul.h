@@ -86,22 +86,23 @@ struct sGossipMenuItems
 {
     uint16 m_uiMenu;
     const char* m_chItem;
+    int32 m_idItem;
 };
 
 const sGossipMenuItems sKromcrushGossips[4] =
 {
-    { 6913, "Um, I'm taking some prisoners we found outside before the king for punishment." },
-    { 6915, "Er... that's how I found them. I wanted to show the king that they were a threat. Say Captain... I overhead Guard Fengus calling you a fat, useless knoll lover. " },
-    { 6914, "So, now that I'm the king... what have you got for me?!" },
-    { 6920, "This sounds like a task worthy of the new king!" }
+    { 6913, "Um, I'm taking some prisoners we found outside before the king for punishment.", -3400005 },
+    { 6915, "Er... that's how I found them. I wanted to show the king that they were a threat. Say Captain... I overhead Guard Fengus calling you a fat, useless knoll lover. ", -3400006 },
+    { 6914, "So, now that I'm the king... what have you got for me?!", -3400007 },
+    { 6920, "This sounds like a task worthy of the new king!", -3400008 }
 };
 
 const sGossipMenuItems sMizzleGossips[4] =
 {
-    { 6876, "I'm the new king? What are you talking about?"},
-    { 6882, "It's good to be King! Now, let's get back to what you were talking about before..."},
-    { 6895, "Henchmen? Tribute?"},
-    { 6916, "Well then... show me the tribute!"}
+    { 6876, "I'm the new king? What are you talking about?", -3400001},
+    { 6882, "It's good to be King! Now, let's get back to what you were talking about before...", -3400002},
+    { 6895, "Henchmen? Tribute?", -3400003},
+    { 6916, "Well then... show me the tribute!", -3400004}
 };
 
 class instance_dire_maul : public ScriptedInstance

@@ -449,7 +449,7 @@ void npc_doctorAI::BeginEvent(Player* pPlayer)
 {
     Playerguid = pPlayer->GetGUID();
 
-    SummonPatient_Timer = 10000;
+    SummonPatient_Timer = 8000;
     SummonPatientCount = 0;
     PatientDiedCount = 0;
     PatientSavedCount = 0;
@@ -542,7 +542,7 @@ void npc_doctorAI::UpdateAI(const uint32 diff)
         return;
     if (SummonPatientCount >= 20)
     {
-        Reset();
+        //Reset();
         return;
     }
 
@@ -584,8 +584,25 @@ void npc_doctorAI::UpdateAI(const uint32 diff)
             ((npc_injured_patientAI*)Patient->AI())->Coord = Point;
             Coordinates.erase(itr);
         }
-        SummonPatient_Timer = 10000;
+
         ++SummonPatientCount;
+    
+        if (SummonPatientCount >= 15)
+        {
+            SummonPatient_Timer = 5000;
+        }
+        else if (SummonPatientCount >=10)
+        {
+            SummonPatient_Timer = 6000;
+        }
+        else if (SummonPatientCount >=5)
+        {
+            SummonPatient_Timer = 7000;
+        }
+        else
+        {
+            SummonPatient_Timer = 8000;
+        }
     }
     else
         SummonPatient_Timer -= diff;

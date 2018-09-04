@@ -943,7 +943,7 @@ struct npc_regthar_deathgateAI : public ScriptedAI
     {
         if (!pSummoned)
             return;
-        if (pSummoned->GetEntry() == NPC_DEFENDER /*or NPC_AXE_THROWER ?*/)
+        if (pSummoned->GetEntry() == NPC_DEFENDER or pSummoned->GetEntry() == NPC_AXE_THROWER)
             DoScriptText(SAY_DEFENDER_FALLEN, m_creature);
         else if (pSummoned->GetEntry() == NPC_KOLKAR_STORMSEER || pSummoned->GetEntry() == NPC_KOLKAR_INVADER)
         {
@@ -1295,7 +1295,33 @@ struct npc_warlord_kromzarAI : public ScriptedAI
 
     void JustDied(Unit* pKiller)
     {
-        m_creature->CastSpell(m_creature, 13965, true); //SPELL_BANNER
+        //spawn 5 banner for team
+
+        //for (int i=0;i<5;i++) 
+        //{
+        //    m_creature->CastSpell(m_creature, 13965, true); //SPELL_BANNER
+        //}
+
+        uint32 id = 164690; //Krom'zar's Banner
+        //char* spawntime = strtok(NULL, " ");
+        uint32 spawntm = 300;
+
+        //if (spawntime)
+        //    spawntm = atoi((char*)spawntime);
+
+        float x = m_creature->GetPositionX() + 3;
+        float y = m_creature->GetPositionY() + 3;
+        float z = m_creature->GetPositionZ() - 1;
+        float ang = m_creature->GetOrientation();
+
+        float rot2 = sin(ang / 2);
+        float rot3 = cos(ang / 2);
+
+        for (int i=0;i<5;i++) 
+        {
+            if (!pKiller->SummonGameObject(id, x, y, z, ang, 0, 0, rot2, rot3, spawntm))
+                sLog.outDebug((std::string("SummonGameObject failed,GameObject id:") + std::to_string(id)).c_str());
+        }
     }
     void UpdateAI(const uint32 uiDiff)
     {

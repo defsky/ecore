@@ -173,30 +173,42 @@ char* const ObjectMgr::GetPatchName()
     switch(sWorld.GetWowPatch())
     {
         case 0:
-            return "Patch 1.2: Mysteries of Maraudon";
+            //return "Patch 1.2: Mysteries of Maraudon";
+            return "当前版本1.2: 玛拉顿的传说";
         case 1:
-            return "Patch 1.3: Ruins of the Dire Maul";
+            //return "Patch 1.3: Ruins of the Dire Maul";
+            return "当前版本1.3: 厄运之锤";
         case 2:
-            return "Patch 1.4: The Call to War";
+            //return "Patch 1.4: The Call to War";
+            return "当前版本1.4: 战争的召唤";
         case 3:
-            return "Patch 1.5: Battlegrounds";
+            //return "Patch 1.5: Battlegrounds";
+            return "当前版本1.5: 战场争锋";
         case 4:
-            return "Patch 1.6: Assault on Blackwing Lair";
+            //return "Patch 1.6: Assault on Blackwing Lair";
+            return "当前版本1.6: 进攻黑翼之巢";
         case 5:
-            return "Patch 1.7: Rise of the Blood God";
+            //return "Patch 1.7: Rise of the Blood God";
+            return "当前版本1.7: 血神的崛起";
         case 6:
-            return "Patch 1.8: Dragons of Nightmare";
+            //return "Patch 1.8: Dragons of Nightmare";
+            return "当前版本1.8: 流沙之战";
         case 7:
-            return "Patch 1.9: The Gates of Ahn'Qiraj";
+            //return "Patch 1.9: The Gates of Ahn'Qiraj";
+            return "当前版本1.9: 安其拉之门";
         case 8:
-            return "Patch 1.10: Storms of Azeroth";
+            //return "Patch 1.10: Storms of Azeroth";
+            return "当前版本1.10: 勇士归来";
         case 9:
-            return "Patch 1.11: Shadow of the Necropolis";
+            //return "Patch 1.11: Shadow of the Necropolis";
+            return "当前版本1.11: 纳克萨玛斯之影";
         case 10:
-            return "Patch 1.12: Drums of War";
+            //return "Patch 1.12: Drums of War";
+            return "当前版本1.12: 震天的战鼓";
     }
 
-    return "Invalid Patch!";
+    //return "Invalid Patch!";
+    return "未知的版本号";
 }
 
 // Nostalrius

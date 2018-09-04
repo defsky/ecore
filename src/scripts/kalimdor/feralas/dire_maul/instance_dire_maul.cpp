@@ -889,7 +889,8 @@ bool GossipHello_npc_mizzle_the_crafty(Player* pPlayer, Creature* pCreature)
     if (pPlayer->HasAura(SPELL_KING_OF_GORDOK))
         menuItem = 2;
 
-    pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sMizzleGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
+    //pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sMizzleGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
+    pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sMizzleGossips[menuItem].m_idItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
     pPlayer->SEND_GOSSIP_MENU(sMizzleGossips[menuItem].m_uiMenu, pCreature->GetObjectGuid());
 
     return true;
@@ -906,7 +907,8 @@ bool GossipSelect_npc_mizzle_the_crafty(Player* pPlayer, Creature* pCreature, ui
     switch (uiAction)
     {
         case GOSSIP_ACTION_INFO_DEF:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sMizzleGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+            //pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sMizzleGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sMizzleGossips[menuItem].m_idItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
             pPlayer->SEND_GOSSIP_MENU(sMizzleGossips[menuItem].m_uiMenu, pCreature->GetObjectGuid());
             break;
         case GOSSIP_ACTION_INFO_DEF + 1:
@@ -1630,7 +1632,8 @@ bool GossipHello_boss_kromcrush(Player* pPlayer, Creature * pCreature)
         if (pInstance->GetData(TYPE_GORDOK_TRIBUTE) == DONE)
             menuItem = 2;
 
-        pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sKromcrushGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
+        //pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sKromcrushGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
+        pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sKromcrushGossips[menuItem].m_idItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
         pPlayer->SEND_GOSSIP_MENU(sKromcrushGossips[menuItem].m_uiMenu, pCreature->GetObjectGuid());
 
         return true;
@@ -1651,7 +1654,8 @@ bool GossipSelect_boss_kromcrush(Player* pPlayer, Creature* pCreature, uint32 ui
         switch (uiAction)
         {
             case GOSSIP_ACTION_INFO_DEF:
-                pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sKromcrushGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+                //pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sKromcrushGossips[menuItem].m_chItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+                pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, sKromcrushGossips[menuItem].m_idItem, GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
                 pPlayer->SEND_GOSSIP_MENU(sKromcrushGossips[menuItem].m_uiMenu, pCreature->GetObjectGuid());
                 break;
             case GOSSIP_ACTION_INFO_DEF + 1:
